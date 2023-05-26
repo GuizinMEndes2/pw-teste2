@@ -7,7 +7,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <h1>Site toppen</h1>
+    <h1>GUIZIN AMOR DA MY LIFE</h1>
     <hr>@yield('content')
 
 </body>
