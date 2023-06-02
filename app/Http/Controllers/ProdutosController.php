@@ -37,7 +37,10 @@ class ProdutosController extends Controller
 
     }
 
-    public function view(){
+    public function view(Produto $produto){
+        return view('produtos.view', [
+            'prod' =>$produto,
+        ]);
 
     }
 }
