@@ -19,7 +19,6 @@ class ProdutosController extends Controller
     public function add(){
         return view('produtos.add');
 
-
     }
 
     public function addSave(Request $form){
@@ -35,6 +34,12 @@ class ProdutosController extends Controller
 
         return redirect()->route('produtos');
 
+    }
+
+    public function edit(Produto $produto){
+        return view('produtos.add',[
+            'prod' => $produto,
+        ]);
     }
 
     public function view(Produto $produto){
