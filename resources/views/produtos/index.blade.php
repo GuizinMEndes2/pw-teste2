@@ -1,13 +1,19 @@
+<center>
 @extends('includes.base')
 @section('title', 'Produtos')
 
 @section('content')
+
+@if (session('sucesso'))
+<div style="background-color:lawngreen; color:violet"><marquee speed="10">{{ session ('sucesso') }}</marquee></div>
+
+@endif
     <table border="1" style="border-color:blue">
         <tr>
-            <th>Nome</th>
-            <th>Preço</th>
-            <th>Quantidade</th>
-            <th>Editar</th>
+            <th style="text-align:left">Nome</th>
+            <th style="text-align:left">Preço🤑</th>
+            <th style="text-align:left">Quantidade</th>
+            <th style="text-align:left">Editar</th>
         </tr>
         @foreach ($prods as $prod )
 
@@ -20,6 +26,9 @@
         </tr>
         @endforeach
     </table>
+
     <a href="{{ route('produtos.add') }}">Adicionar produtos</a>
-@endsection
+    <hr  align="center" style="color:rgb(255, 0, 0)">
+</center>
+    @endsection
 

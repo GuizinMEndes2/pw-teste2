@@ -1,8 +1,10 @@
 @extends('includes.base')
+
 @section('title', 'Produtos - Adicionar')
 
 @section('content')
-    <h2>Adicione seu produto</h2>
+<center>
+    <h2 style="color:chartreuse">Adicione seu produto</h2>
 
     @if ($errors)
     @foreach ($errors->all() as $err )
@@ -11,15 +13,17 @@
 
     @endif
 
-    <form action="{{ route('produtos.addSave') }}" method="post">
-        @csrf
-        <input type="text" name="name" placeholder="Nome" value="{{ old('name') }}">
-        <br>
-        <input type="number" name="price" step="0.01" placeholder="Preço" value="{{ old('price') }}">
-        <br>
-        <input type="number" name="quantity" placeholder="Quantidade" min="0" value="{{ old('quantity') }}">
-        <hr width="15%" align="left">
-        <input type="submit" value="Gravar">
-    </form>
 
+        <form action="{{ url()->current() }}" method="post">
+        @csrf
+        <input type="text" name="name" placeholder="Nome" value="{{ old('name', $prod->name ?? '') }}">
+        <br>
+        <input type="number" name="price" step="0.01" placeholder="Preço" value="{{ old('price',  $prod->price ?? '') }}">
+        <br>
+        <input type="number" name="quantity" placeholder="Quantidade" min="0" value="{{ old('quantity',  $prod->quantity ?? '') }}">
+       <br>
+        <input type="submit" value="Gravar">
+        <hr width="15%" align="center" style="color:rgb(255, 0, 0)">
+    </form>
+</center>
 @endsection

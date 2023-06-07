@@ -30,7 +30,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 
-});
+})->name('home');
 
 Route::get('/produtos', [ProdutosController::class, 'index'])->name('produtos');
 
@@ -41,4 +41,10 @@ Route::post('/produtos/add', [ProdutosController::class, 'addSave'])->name('prod
 Route::get('/produtos/{produto}', [ProdutosController::class, 'view'])-> name('produtos.view');
 
 Route::get('/produtos/edit/{produto}', [ProdutosController::class, 'edit'])->name('produtos.edit');
+
+Route::post('/produtos/edit/{produto}', [ProdutosController::class, 'editSave'])->name('produtos.editSave');
+
+Route::get('/produtos/delete/{produt}', [ProdutosController::class, 'delete'])->name('produtos.deleteForReal');
+
+
 
