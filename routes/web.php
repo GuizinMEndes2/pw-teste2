@@ -44,7 +44,9 @@ Route::get('/produtos/edit/{produto}', [ProdutosController::class, 'edit'])->nam
 
 Route::post('/produtos/edit/{produto}', [ProdutosController::class, 'editSave'])->name('produtos.editSave');
 
-Route::get('/produtos/delete/{produt}', [ProdutosController::class, 'delete'])->name('produtos.deleteForReal');
+Route::get('/produtos/delete/{produto}', [ProdutosController::class, 'delete'])->name('produtos.delete');
+
+Route::delete('/produtos/delete/{produto}', [ProdutosController::class, 'deleteForReal'])->name('produtos.deleteForReal');
 
 
 
