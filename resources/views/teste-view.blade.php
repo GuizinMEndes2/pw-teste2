@@ -1,8 +1,10 @@
+{{-- resources/views/teste-view.blade.php --}}
 @extends('includes.base')
-@section('title', 'Títilo joia')
+
+@section('title', 'Título joia')
 
 @section('content')
-<p>Este é o meu primeiro arquivo Blade</p>
-<p>estou emocionado ahhhh  😍</p>
-<p>minha varriável que veio de longe: {{ $valor_da_controller }}</p>
+<p>Este é meu primeiro arquivo Blade</p>
+<p>Estou emocionado 🥲</p>
+<p>Minha variável que veio de longe: {{ $valor_da_controller }}</p>
 @endsection

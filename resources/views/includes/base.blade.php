@@ -7,16 +7,18 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <h1 style="color:darkmagenta">GUIZIN AMOR DA MY LIFE</h1>
-    <!--menu-->
+
+    <h1>Site lindão</h1>
+    <!-- Menu -->
     <div>
-        <li><a href="{{ route('home') }}">Home</a></li>
-        <li><a href="{{ route('produtos') }}">Produtos</a></li>
-
-
+        <ul>
+            <li><a href="{{ route('home')}} ">Home</a></li>
+            <li><a href="{{ route('produtos')}}">Produtos</a></li>
+        </ul>
     </div>
-    {{--Conteúdo--}}
-    <hr style="color:rgb(255, 0, 234)">
+    <hr style="height:6px;background-color:deepskyblue">
+
+    {{-- Conteúdo --}}
     @yield('content')
 
 </body>
