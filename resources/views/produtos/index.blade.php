@@ -16,12 +16,13 @@
 <form action="{{ route('produtos') }}" method="post">
     @csrf
     <input type="text" name="busca">
-    <select name="old">
+    <select name="ord">
         <option value="asc">Crescente</option>
         <option value="desc">Decrescente</option>
     </select>
-    <input type="submit" value="buscar">
+    <input type="submit" value="Buscar">
 </form>
+<br>
 
 <table border="1" style="border-color:rgb(52, 214, 87)">
     <tr>
@@ -43,6 +44,8 @@
     @endforeach
 
 </table>
+
+{{ $prods->links('vendor.pagination.default') }}
 
 <a href="{{ route('produtos.add') }}">Adicionar produto</a>
 @endsection
