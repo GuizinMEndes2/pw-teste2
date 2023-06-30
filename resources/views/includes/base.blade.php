@@ -11,11 +11,21 @@
 <body>
 
     <h1>Site lindão</h1>
+    <div>
+        @if (Auth::user())
+         Eu vacilei mas eu te amo {{ Auth::user()->name }}
+         <br>
+         <a href="{{ route('logout')}}">Logout</a>
+        @else
+            <a href="{{ route('login') }}">Faça login piá veio</a>
+        @endif
+    </div>
     <!-- Menu -->
     <div>
         <ul>
             <li><a href="{{ route('home')}} ">Home</a></li>
             <li><a href="{{ route('produtos')}}">Produtos</a></li>
+            <li><a href="{{ route('usuarios')}}">Usuários</a></li>
         </ul>
     </div>
     <hr style="height:6px;background-color:deepskyblue">
