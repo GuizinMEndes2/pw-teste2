@@ -11,15 +11,18 @@
 <body>
 
     <h1>Site lindão</h1>
+
+    <!-- Usuário autenticado -->
     <div>
         @if (Auth::user())
-         Eu vacilei mas eu te amo {{ Auth::user()->name }}
-         <br>
-         <a href="{{ route('logout')}}">Logout</a>
+            Olá {{ Auth::user()->name }}.
+            <br>
+            <a href="{{ route('logout') }}">Sair</a>
         @else
-            <a href="{{ route('login') }}">Faça login piá veio</a>
+            <a href="{{ route('login') }}">Fazer login</a>
         @endif
     </div>
+
     <!-- Menu -->
     <div>
         <ul>
